@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html xml:lang="fr" lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link href="dist/css/main.css" rel="stylesheet" type="text/css" />
     <title>Les petits plats</title>
   </head>
   <body >
     <header>
-		<i class="fa-regular fa-hat-chef"></i>
-		<h2>Les petits plats</h2>
-        
+      <img src="src/image/hat-chef.png" alt="hat-chef">
+      <h2>Les petits plats</h2>
     </header>
+    <div id="searchArea">
+      <input type="text" id="searchArea_Input" placeholder="Rechercher une recette">
+      <img src="src/image/search-icon.png" alt="search-icon">
+    </div>
+    <div id="searchedText-div">
+      <span id="searchedText">Searched Word<img src="src/image/cross-circle.png" alt="cross-circle icon"/></span>
+      
+    </div>
+    <div id="dropDownSearchArea">
+      <select name="ingredients" id="ingredients">
+        <option value="">Ingredients</option>
+      </select>
+      <select name="appareils" id="appareils">
+        <option value="">Appareils</option>
+      </select>
+      <select name="ustensiles" id="ustensiles">
+        <option value="">Ustensiles</option>
+      </select>
+    </div>
     <main>
         
         

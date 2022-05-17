@@ -1,0 +1,10 @@
+@import "./utils/variables";
+@import "./base/global";
+@import "./base/typography";
+@import "./utils/mixin";
+// Header
+@import "./layout/header";
+
+//searchArea
+@import "./layout/searchArea";
+@import "./layout/dropDownSearchArea";

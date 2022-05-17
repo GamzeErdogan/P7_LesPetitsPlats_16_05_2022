@@ -1,0 +1,18 @@
+@mixin flexBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin dropDownMenuSize{
+    border-radius: 5px;
+    width: 170px;
+    height: 60px;
+}
+
+@mixin dropDownStyle{
+    color: white;
+    font-size: 20px;
+    padding-left: 20px;
+    border: none;
+}
