@@ -3,16 +3,43 @@
     justify-content: center;
     align-items: center;
 }
-
-@mixin dropDownMenuSize{
+@mixin dropDownBtnStyle{
+    gap: 10px;
     border-radius: 5px;
-    width: 170px;
-    height: 60px;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    // width: 150px;
+}
+@mixin dropDownIcon{
+    width: 20px;
+    height: 20px;
 }
 
-@mixin dropDownStyle{
-    color: white;
-    font-size: 20px;
-    padding-left: 20px;
+@mixin dropDownInputStyle{
+    font-size: 18px;
+    padding: 24px 20px 12px 20px;
     border: none;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+@mixin dropDownContent{
+    display: none;
+    position: absolute;
+    color: white;
+    z-index: 1;
+    top: 0;
+    border-radius: 5px;
+    min-width: 230px;
+}
+
+//Media query
+@mixin mobile-only{
+    @media screen and (max-width:map-get($breakpoints,mobile-max)) {
+        @content;
+    }
 }

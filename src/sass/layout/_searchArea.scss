@@ -2,21 +2,23 @@
     width: 100%;
     @include flexBox;
     position: relative;
+    margin: auto;
    &_Input{
        width: 90%;
-       height: 40px;
+       height: 53px;
        border-radius: 5px;
        background-color:$searchAreaColor;
        font-size: 20px;
        padding-left: 20px;
        border: 0;
        font-family: $fontSearchArea;
+       
    }
    img{
        width: 20px;
        height: 20px;
        position: absolute;
-       bottom: 10px;
+       bottom: 15px;
        right: 5%;
    }
 }

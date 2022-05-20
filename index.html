@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xml:lang="fr" lang="fr">
   <head>
-    <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/css/main.css" rel="stylesheet" type="text/css" />
     <title>Les petits plats</title>
   </head>
@@ -20,23 +20,66 @@
       <span id="searchedText">Searched Word<img src="src/image/cross-circle.png" alt="cross-circle icon"/></span>
       
     </div>
-    <div id="dropDownSearchArea">
-      <select name="ingredients" id="ingredients">
-        <option value="">Ingredients</option>
-      </select>
-      <select name="appareils" id="appareils">
-        <option value="">Appareils</option>
-      </select>
-      <select name="ustensiles" id="ustensiles">
-        <option value="">Ustensiles</option>
-      </select>
-    </div>
+    <nav>
+      <div class="dropdown--ingredient">
+        <button onclick="myFunctionIngredient()" class="dropbtn--ingredient">Ingredients <img src="src/image/angle.png"/></button>
+        <div id="myDropdown--ingredient" class="dropdown-content--ingredient">
+          <input type="text" placeholder="Rechercher un ingredient" id="myInput--ingredient" onkeyup="filterFunctionIngredient()">
+          <div id="contentIngredientDiv">  
+            <a href="#">Lait de coco</a>
+            <a href="#">Sucre</a>
+            <a href="#">Concombre</a>
+            <a href="#">Citron Vert</a>
+            <a href="#">Oignon</a>
+            <a href="#">Riz</a>
+            <a href="#">Pomme</a>
+            <a href="#">Lait de coco</a>
+            <a href="#">Sucre</a>
+            <a href="#">Concombre</a>
+            <a href="#">Citron Vert</a>
+            <a href="#">Oignon</a>
+            <a href="#">Riz</a>
+            <a href="#">Pomme</a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown--appareils">
+        <button onclick="myFunctionAppareils()" class="dropbtn--appareils">Appareils <img src="src/image/angle.png"/></button>
+        <div id="myDropdown--appareils" class="dropdown-content--appareils">
+          <input type="text" placeholder="Rechercher un ingredient" id="myInput--appareils" onkeyup="filterFunction()">
+          <div id="contentAppareilsDiv">
+            <a href="#">Lait de coco</a>
+            <a href="#">Sucre</a>
+            <a href="#">Concombre</a>
+            <a href="#">Citron Vert</a>
+            <a href="#">Oignon</a>
+            <a href="#">Riz</a>
+            <a href="#">Pomme</a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown--ustensiles">
+        <button onclick="myFunctionUstensiles()" class="dropbtn--ustensiles">Ustensiles <img src="src/image/angle.png"/></button>
+        <div id="myDropdown--ustensiles" class="dropdown-content--ustensiles">
+          <input type="text" placeholder="Rechercher un ingredient" id="myInput--ustensiles" onkeyup="filterFunction()">
+          <div id="contentUstensilesDiv">
+            <a href="#">Lait de coco</a>
+            <a href="#">Sucre</a>
+            <a href="#">Concombre</a>
+            <a href="#">Citron Vert</a>
+            <a href="#">Oignon</a>
+            <a href="#">Riz</a>
+            <a href="#">Pomme</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
         
         
     </main>
     
-    <script src=""></script>
+    <script src="src/scripts/dropdown.js"></script>
     <script src=""></script>
     <script src=""></script>
   </body>
