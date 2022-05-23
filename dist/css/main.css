@@ -422,4 +422,119 @@ nav .dropdown--ustensiles .show--ustensiles {
   display: block;
   width: 300px;
 }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  height: auto;
+  margin: 37px;
+  gap: 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .cardDiv {
+  border-radius: 5px;
+  width: 30%;
+  height: 400px;
+  background-color: #e7e7e7;
+}
+
+main .cardDiv .emptyArea {
+  border-radius: 5px 5px 0 0;
+  background-color: #C7BEBE;
+  width: 100%;
+  height: 200px;
+}
+
+main .cardDiv .titleArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  font-weight: 600;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+main .cardDiv .titleArea .iconArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+  font-weight: bold;
+}
+
+main .cardDiv .titleArea .iconArea img {
+  width: 20px;
+  height: 20px;
+}
+
+main .cardDiv .descriptionArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 5px;
+}
+
+main .cardDiv .descriptionArea .ingredientDiv {
+  width: 50%;
+  height: 127px;
+  line-height: 11px;
+  overflow: hidden;
+  font-family: Lato;
+}
+
+main .cardDiv .descriptionArea .ingredientDiv span {
+  font-weight: bold;
+}
+
+main .cardDiv .descriptionArea .descriptionDiv {
+  width: 50%;
+}
+
+main .cardDiv .descriptionArea .descriptionDiv p {
+  height: 97px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+}
 /*# sourceMappingURL=main.css.map */

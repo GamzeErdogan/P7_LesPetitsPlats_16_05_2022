@@ -1,0 +1,67 @@
+main{
+    @include flexBox;
+    width: 95%;
+    height: auto;
+    margin: 37px;
+    gap: 40px;
+    flex-wrap: wrap;
+    .cardDiv{
+        border-radius: 5px;
+        width: 30%;
+        height: 400px;
+        background-color: $searchAreaColor;
+        .emptyArea{
+            border-radius: 5px 5px 0 0;
+            background-color: #C7BEBE;
+            width: 100%;
+            height: 200px;
+        }
+        .titleArea{
+            @include flexBox;
+            justify-content: space-between;
+            padding: 10px;
+            font-weight: 600;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            .iconArea{
+                @include flexBox;
+                justify-content: space-between;
+                gap: 10px;
+                font-weight: bold;
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        .descriptionArea{
+            @include flexBox;
+            font-size: 12px;
+            align-items: flex-start;
+            margin: 5px;
+            .ingredientDiv{
+                width: 50%;
+                height: 127px;
+                line-height: 11px;
+                overflow:hidden;
+                font-family: Lato;
+                span{
+                    font-weight: bold;
+                }
+            }
+            .descriptionDiv{
+                width: 50%;
+                p{
+                    height: 97px;
+                    text-overflow: ellipsis;
+                    overflow:hidden;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                }
+            }
+
+        }
+    }
+}
