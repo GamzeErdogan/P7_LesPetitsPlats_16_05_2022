@@ -17,23 +17,17 @@ async function displayIndex(recipes) {
     
   
 //---- I created  elements of Ingredients DropDown  
-    const dropdown1 = document.getElementById("myDropdown--ingredient");
-    const ingredientElement = document.createElement('div');
-    ingredientElement.setAttribute('id','contentIngredientDiv');
-        for (var i=0; i<50; i++) {
-            var getRecipesListe = recipesObj2.recipesList[i];
-            var myIngredients = getRecipesListe.ingredients;
-            for(var k=0; k<5;k++){
-                var getIngredient = myIngredients[k];
-                var ingredientName = getIngredient.ingredient;
-                ingredientElement.innerHTML = `
-                <a href="#">${ingredientName}</a>
-            `;
-    console.log(ingredientName);
-                dropdown1.appendChild(ingredientElement);
-            }
-            
-        }
+    const dropdownDivIngredient = document.getElementById("myDropdown--ingredient");
+    dropdownDivIngredient.appendChild(recipesObj2.ingredientDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivAppareils = document.getElementById("myDropdown--appareils");
+    dropdownDivAppareils.appendChild(recipesObj2.appareilsDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivUstensiles = document.getElementById("myDropdown--ustensiles");
+    dropdownDivUstensiles.appendChild(recipesObj2.ustensilesDropDownDom);
+    
 //-----I created  the cardDOM of recipes -------
     for (const recipeCard of recipesObj2.recipesList) {
         recipeContainer.appendChild(recipeCard.recipeCardDom);
@@ -44,7 +38,6 @@ async function init() {
     const dataRecette = await dataOfRecette();
     console.log("result: ",dataRecette.recipes);
     displayIndex(dataRecette.recipes);
-
 }
 
 init();

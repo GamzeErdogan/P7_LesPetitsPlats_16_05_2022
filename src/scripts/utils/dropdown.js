@@ -2,7 +2,6 @@
 toggle between hiding and showing the dropdown content */
 function myFunctionIngredient() {
     document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
-    // document.getElementById("myInput--ingredient").style.width='535px';
     const dropDownAppareil = document.querySelector(".dropbtn--appareils");
     dropDownAppareil.style.position='absolute';
     dropDownAppareil.style.left='430px';
@@ -34,6 +33,38 @@ function myFunctionIngredient() {
     dropDownUstensile.style.left='150px';
   }
 
+  function filterFunctionAppareils() {
+    var input, filter, a, i;
+    input = document.getElementById("myInput--appareils");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown--appareils");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+     var txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1){
+          a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
+
   function myFunctionUstensiles (){
     document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
+  }
+
+  function filterFunctionUstensiles() {
+    var input, filter, a, i;
+    input = document.getElementById("myInput--ustensiles");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown--ustensiles");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+     var txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1){
+          a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
   }

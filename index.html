@@ -25,52 +25,21 @@
         <button onclick="myFunctionIngredient()" class="dropbtn--ingredient">Ingredients <img src="src/image/angle.png"/></button>
         <div id="myDropdown--ingredient" class="dropdown-content--ingredient">
           <input type="text" placeholder="Rechercher un ingredient" id="myInput--ingredient" onkeyup="filterFunctionIngredient()">
-          <!-- <div id="contentIngredientDiv">  
-            <a href="#">Lait de coco</a>
-            <a href="#">Sucre</a>
-            <a href="#">Concombre</a>
-            <a href="#">Citron Vert</a>
-            <a href="#">Oignon</a>
-            <a href="#">Riz</a>
-            <a href="#">Pomme</a>
-            <a href="#">Lait de coco</a>
-            <a href="#">Sucre</a>
-            <a href="#">Concombre</a>
-            <a href="#">Citron Vert</a>
-            <a href="#">Oignon</a>
-            <a href="#">Riz</a>
-            <a href="#">Pomme</a>
-          </div> -->
+          
         </div>
       </div>
       <div class="dropdown--appareils">
         <button onclick="myFunctionAppareils()" class="dropbtn--appareils">Appareils <img src="src/image/angle.png"/></button>
         <div id="myDropdown--appareils" class="dropdown-content--appareils">
-          <input type="text" placeholder="Rechercher un ingredient" id="myInput--appareils" onkeyup="filterFunction()">
-          <div id="contentAppareilsDiv">
-            <a href="#">Lait de coco</a>
-            <a href="#">Sucre</a>
-            <a href="#">Concombre</a>
-            <a href="#">Citron Vert</a>
-            <a href="#">Oignon</a>
-            <a href="#">Riz</a>
-            <a href="#">Pomme</a>
-          </div>
+          <input type="text" placeholder="Rechercher un appareil" id="myInput--appareils" onkeyup="filterFunctionAppareils()">
+          
         </div>
       </div>
       <div class="dropdown--ustensiles">
         <button onclick="myFunctionUstensiles()" class="dropbtn--ustensiles">Ustensiles <img src="src/image/angle.png"/></button>
         <div id="myDropdown--ustensiles" class="dropdown-content--ustensiles">
-          <input type="text" placeholder="Rechercher un ingredient" id="myInput--ustensiles" onkeyup="filterFunction()">
-          <div id="contentUstensilesDiv">
-            <a href="#">Lait de coco</a>
-            <a href="#">Sucre</a>
-            <a href="#">Concombre</a>
-            <a href="#">Citron Vert</a>
-            <a href="#">Oignon</a>
-            <a href="#">Riz</a>
-            <a href="#">Pomme</a>
-          </div>
+          <input type="text" placeholder="Rechercher un ustensile" id="myInput--ustensiles" onkeyup="filterFunctionUstensiles()">
+          
         </div>
       </div>
     </nav>
@@ -81,5 +50,5 @@
     
     <script src="src/scripts/objectes/recipes.js"></script>
     <script src="src/scripts/indexPage.js"></script>
-    <script src="src/scripts/dropdown.js"></script>
+    <script src="src/scripts/utils/dropdown.js"></script>
   </body>
