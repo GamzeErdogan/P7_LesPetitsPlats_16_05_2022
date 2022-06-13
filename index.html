@@ -13,23 +13,22 @@
       <h2>Les petits plats</h2>
     </header>
     <div id="searchArea">
-      <input type="text" id="searchArea_Input" placeholder="Rechercher une recette">
-      <img src="src/image/search-icon.png" alt="search-icon">
+      <input type="text" id="searchArea_Input" placeholder="Rechercher une recette" minlength="3" onkeyup="processChanges()">
+      <img src="src/image/search-icon.png" alt="search-icon" id="searchedIcon">
     </div>
-    <div id="searchedText-div">
-      <span id="searchedText">Searched Word<img src="src/image/cross-circle.png" alt="cross-circle icon"/></span>
-      
-    </div>
+    <table id="tableTag">
+
+    </table>
+    
     <nav>
       <div class="dropdown--ingredient">
         <button onclick="myFunctionIngredient()" class="dropbtn--ingredient">Ingredients <img src="src/image/angle.png"/></button>
         <div id="myDropdown--ingredient" class="dropdown-content--ingredient">
           <input type="text" placeholder="Rechercher un ingredient" id="myInput--ingredient" onkeyup="filterFunctionIngredient()">
-          
         </div>
       </div>
       <div class="dropdown--appareils">
-        <button onclick="myFunctionAppareils()" class="dropbtn--appareils">Appareils <img src="src/image/angle.png"/></button>
+        <button onclick="myFunctionAppareils()" class="dropbtn--appareils dropbtnAppareils--modify">Appareils <img src="src/image/angle.png"/></button>
         <div id="myDropdown--appareils" class="dropdown-content--appareils">
           <input type="text" placeholder="Rechercher un appareil" id="myInput--appareils" onkeyup="filterFunctionAppareils()">
           
@@ -51,4 +50,5 @@
     <script src="src/scripts/objectes/recipes.js"></script>
     <script src="src/scripts/indexPage.js"></script>
     <script src="src/scripts/utils/dropdown.js"></script>
+    <script src="src/scripts/utils/search.js"></script>
   </body>
