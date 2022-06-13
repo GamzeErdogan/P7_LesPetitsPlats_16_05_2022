@@ -1,4 +1,16 @@
-    const dataOfRecette = async () => {
+//VARIABLES
+    var searchValue =document.getElementById('searchArea_Input');
+    var closeButton1 = document.getElementById('closeButton1');
+    var searchedText =document.getElementById('searchedText1');
+    var searchedTextDiv = document.getElementById('searchedText-div');
+    var searchedIcon = document.getElementById('searchedIcon');
+    var creatTagTr = document.createElement('tr');
+    var creatTagTable = document.getElementById('tableTag');
+    const dataRecette = {};
+    const recipeContainer = document.getElementsByTagName('main')[0];
+
+//FETCH DATA    
+   const dataOfRecette = async () => {
         let url = 'src/data/recette.json';
         try {
             let res = await fetch (url);
@@ -11,14 +23,19 @@
 
 //----------This function displays the entire page of the index-------------------------
 async function displayIndex(recipes) {
-    const recipeContainer = document.getElementsByTagName('main')[0];
+    //first clean the inner carts
+    recipeContainer.innerHTML = '';
     const recipesObj2 = new recipesObj(recipes);
-    console.log('recipe obj', recipesObj2);
+    // console.log('recipe obj', recipesObj2);
     
-  
+    creatTagTable.appendChild(creatTagTr);
+//------search an ingredient of the recipe then write this item into the label------
+
+    
 //---- I created  elements of Ingredients DropDown  
     const dropdownDivIngredient = document.getElementById("myDropdown--ingredient");
     dropdownDivIngredient.appendChild(recipesObj2.ingredientDropDownDom);
+    
 
 //---- I created  elements of Appareils DropDown  
     const dropdownDivAppareils = document.getElementById("myDropdown--appareils");
@@ -32,12 +49,17 @@ async function displayIndex(recipes) {
     for (const recipeCard of recipesObj2.recipesList) {
         recipeContainer.appendChild(recipeCard.recipeCardDom);
     }
+//-----When there is no correspond seaech
+    if(filteredRecipes.length == 0){
+        var creatP = document.createElement("p");
+        creatP.textContent = "Aucune recette ne correspond à votre critère… Vous pouvez chercher  ' tarte aux pommes ' , 'poisson' etc... ";
+        recipeContainer.appendChild(creatP);
+    }
 }
 
 async function init() {
-    const dataRecette = await dataOfRecette();
-    console.log("result: ",dataRecette.recipes);
-    displayIndex(dataRecette.recipes);
+    this.dataRecette = await dataOfRecette();
+    displayIndex(this.dataRecette.recipes);
 }
 
 init();

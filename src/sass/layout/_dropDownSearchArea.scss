@@ -1,25 +1,32 @@
-#searchedText-div{
-    width: 50%;
+#tableTag{
+    width: 60%;
     margin: 20px 0 10px 53px;
+    // @include flexBox;
+    // gap: 20px;
     @include mobile-only{
       margin-left: 20px;
     }
-    span{
-        width: 180px;
-        height: 40px;
-        background-color: $dropDownIngredientsColor;
-        color: $dropDownFontColor;
-        font-size: 16px;
-        border-radius: 5px;
-        display: block;
-        padding-left: 5px;
-        @include flexBox;
-        gap: 20px;
-        img{
-            width: 20px;
-            height: 20px;
-        }
+    tr{
+     display: flex;
+     gap: 10px;
     }
+    .searchedText--td{
+      width: 180px;
+      height: 40px;
+      background-color: $dropDownIngredientsColor;
+      border-radius: 5px;
+      @include flexBox;
+      gap: 20px;
+      #searchedText1{
+        font-size: 16px;
+        color: white;
+      }
+      img{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    } 
 }
 
 nav{
@@ -110,6 +117,7 @@ nav{
         height: 53px;
       }
     }
+    
     #myInput--appareils {
       background-color: $dropDownAppareilsColor;
       @include dropDownInputStyle;

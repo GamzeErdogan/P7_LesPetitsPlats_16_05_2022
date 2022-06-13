@@ -1,19 +1,21 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
+const dropDownAppareil = document.querySelector(".dropbtn--appareils");
+const dropDownUstensile = document.querySelector(".dropbtn--ustensiles");
+var inputIngredient = document.getElementById("myInput--ingredient");
+var inputAppareil = document.getElementById("myInput--appareils");
+var inputUstensile = document.getElementById("myInput--ustensiles");
 function myFunctionIngredient() {
     document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
-    const dropDownAppareil = document.querySelector(".dropbtn--appareils");
     dropDownAppareil.style.position='absolute';
     dropDownAppareil.style.left='430px';
-    const dropDownUstensile = document.querySelector(".dropbtn--ustensiles");
     dropDownUstensile.style.position='absolute';
     dropDownUstensile.style.left='550px';
   }
   
   function filterFunctionIngredient() {
-    var input, filter, a, i;
-    input = document.getElementById("myInput--ingredient");
-    filter = input.value.toUpperCase();
+    var  filter, a, i;
+    filter = inputIngredient.value.toUpperCase();
     div = document.getElementById("myDropdown--ingredient");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
@@ -34,9 +36,8 @@ function myFunctionIngredient() {
   }
 
   function filterFunctionAppareils() {
-    var input, filter, a, i;
-    input = document.getElementById("myInput--appareils");
-    filter = input.value.toUpperCase();
+    var filter, a, i;
+    filter = inputAppareil.value.toUpperCase();
     div = document.getElementById("myDropdown--appareils");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
@@ -54,9 +55,8 @@ function myFunctionIngredient() {
   }
 
   function filterFunctionUstensiles() {
-    var input, filter, a, i;
-    input = document.getElementById("myInput--ustensiles");
-    filter = input.value.toUpperCase();
+    var filter, a, i;
+    filter = inputUstensile.value.toUpperCase();
     div = document.getElementById("myDropdown--ustensiles");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {

@@ -69,34 +69,38 @@ header h2 {
   font-family: Lato;
 }
 
-#searchArea img {
+#searchArea #searchedIcon {
   width: 20px;
   height: 20px;
   position: absolute;
   bottom: 15px;
   right: 5%;
+  cursor: pointer;
 }
 
-#searchedText-div {
-  width: 50%;
+#tableTag {
+  width: 60%;
   margin: 20px 0 10px 53px;
 }
 
 @media screen and (max-width: 768px) {
-  #searchedText-div {
+  #tableTag {
     margin-left: 20px;
   }
 }
 
-#searchedText-div span {
+#tableTag tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+#tableTag .searchedText--td {
   width: 180px;
   height: 40px;
   background-color: #3282F7;
-  color: #ffff;
-  font-size: 16px;
   border-radius: 5px;
-  display: block;
-  padding-left: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,9 +113,15 @@ header h2 {
   gap: 20px;
 }
 
-#searchedText-div span img {
+#tableTag .searchedText--td #searchedText1 {
+  font-size: 16px;
+  color: white;
+}
+
+#tableTag .searchedText--td img {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 nav {
@@ -443,7 +453,7 @@ main {
 
 main .cardDiv {
   border-radius: 5px;
-  width: 30%;
+  width: 31%;
   height: 400px;
   background-color: #e7e7e7;
 }
@@ -468,10 +478,9 @@ main .cardDiv .titleArea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
   font-weight: 600;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 main .cardDiv .titleArea .iconArea {

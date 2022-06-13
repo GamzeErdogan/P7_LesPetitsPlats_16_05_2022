@@ -35,7 +35,7 @@
     },
     {
         "id": 2,
-        "name" : "Poisson Cru à la tahitienne",
+        "name" : "Poisson Cru à la tahitienne coco",
         "servings": 2,
         "ingredients": [
             {
@@ -112,7 +112,7 @@
         "servings": 4,
         "ingredients":[
             {
-                "ingredient": "Riz blanc",
+                "ingredient": "coco",
                 "quantity": 500,
                 "unit": "grammes"
             },
