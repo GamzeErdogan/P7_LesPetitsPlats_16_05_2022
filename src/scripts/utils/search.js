@@ -31,7 +31,6 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     //Re-search after input text entered more than 3 character 
     if(searchValue.value.length > 2 ){
         //Create new recipes array by entering word
-        // filteredRecipes = filteredRecipes.filter(i => i.name.includes(searchValue.value) || i.description.includes(searchValue.value) || i.ingredients.some(k => k.ingredient.includes(searchValue.value)));
         for(i=0; i<filteredRecipes.length; i++){
             if(filteredRecipes[i].name.includes(searchValue.value) || filteredRecipes[i].description.includes(searchValue.value)){
                 newIngredient.push(filteredRecipes[i]);
@@ -41,7 +40,6 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
             for(k=0; k<filteredRecipes[i].ingredients.length; k++){
                 if(filteredRecipes[i].ingredients[k].ingredient.includes(searchValue.value)){
                     newIngredient.push(filteredRecipes[i]);
-                    console.log(filteredRecipes[i]);
                 }
             }
         }
