@@ -49,12 +49,14 @@ async function displayIndex(recipes) {
     for (const recipeCard of recipesObj2.recipesList) {
         recipeContainer.appendChild(recipeCard.recipeCardDom);
     }
-//-----When there is no correspond seaech
+//-----When there is no correspond search
     if(filteredRecipes.length == 0){
         var creatP = document.createElement("p");
         creatP.textContent = "Aucune recette ne correspond à votre critère… Vous pouvez chercher  ' tarte aux pommes ' , 'poisson' etc... ";
         recipeContainer.appendChild(creatP);
     }
+
+    
 }
 
 async function init() {

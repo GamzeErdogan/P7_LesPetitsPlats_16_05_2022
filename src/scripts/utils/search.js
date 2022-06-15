@@ -36,7 +36,7 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
         filteredRecipes = filteredRecipes.filter(i => i.name.includes(searchValue.value) || i.description.includes(searchValue.value) || i.ingredients.some(k => k.ingredient.includes(searchValue.value)));
     }
     //Display new carts
-    console.log("Total filtered carts:",filteredRecipes.length);
+    console.log("Total carts:",filteredRecipes.length);
     
     displayIndex(filteredRecipes);
 }

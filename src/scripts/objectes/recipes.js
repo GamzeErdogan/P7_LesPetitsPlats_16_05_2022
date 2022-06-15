@@ -1,4 +1,3 @@
-
 class recipesObj {
     
     constructor(recipesArray){
@@ -44,8 +43,10 @@ class recipesObj {
                     saveInput(this.selectedIngredientsList);
                 });
                 ingredientTagA.remove();
-                //close dropdown menu when you click
+                //close all dropdown menus when you click
+                // hideAllDropDownMenusExceptMe("myDropdown--ingredient");
                 document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
+                // document.getElementsByClassName("dropdown-content--list").classList.toggle("show--ingredient");
                 dropDownAppareil.style.position='unset';
                 dropDownUstensile.style.position='unset';
                 inputIngredient.textContent =" ";
@@ -54,7 +55,8 @@ class recipesObj {
                 this.selectedIngredientsList.push(ingredient);
                 saveInput(this.selectedIngredientsList);
             })
-            
+        
+            // ingredient = ingredient.filter(k => k.ingredient !=ingredientTagA.innerText);
         }
         return ingredientDiv;
     }
@@ -93,7 +95,7 @@ class recipesObj {
                     appareilsTagA.remove();
                     //close dropdown menu when you click
                     document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
-                    dropDownUstensile.style.position='unset';
+                    dropDownUstensile.style.left='380px';
                     inputAppareil.textContent = " ";
                     //Do new search
                     this.selectedAppareilList.push(appareilItem);
@@ -198,6 +200,22 @@ class recipeObj {
         return recipeCard;
     }
 
+}
+
+
+function hideAllDropDownMenusExceptMe(idName){
+    //Hide all menu
+    domMenuList = document.getElementsByClassName("dropdown-content--list");
+
+    for (const menu of domMenuList) {
+        menu.classList.remove("show--ingredient");
+        menu.classList.remove("show--appareils");
+        menu.classList.remove("show--ustensiles");
+    }
+
+    //Show this menu
+    // document.getElementById(idName).classList.add("show--ingredient");
+                
 }
 
 

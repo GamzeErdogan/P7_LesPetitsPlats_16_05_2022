@@ -43,3 +43,9 @@
         @content;
     }
 }
+
+@mixin tablette-only{
+    @media screen and (max-width:map-get($breakpoints,tablette-max))and (min-width:map-get($breakpoints,mobile-max))  {
+        @content;
+    }
+}
