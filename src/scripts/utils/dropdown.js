@@ -36,8 +36,8 @@ function myFunctionIngredient() {
     document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
     document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
     document.getElementById("myDropdown--ustensiles").classList.remove("show--ustensiles");
-    dropDownUstensile.style.left='550px';
-    dropDownAppareil.style.left='200px';
+    dropDownUstensile.style.left='150px';
+    // dropDownAppareil.style.left='200px';
   }
 
   function filterFunctionAppareils() {
@@ -59,8 +59,8 @@ function myFunctionIngredient() {
     document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
     document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
     document.getElementById("myDropdown--appareils").classList.remove("show--appareils");
-    dropDownUstensile.style.left='380px';
-    dropDownAppareil.style.left='200px';
+    // dropDownUstensile.style.left='380px';
+    // dropDownAppareil.style.left='200px';
   }
 
   function filterFunctionUstensiles() {
@@ -77,3 +77,23 @@ function myFunctionIngredient() {
       }
     }
   }
+  function showDropDownMenus(recipes){
+    const recipesObj2 = new recipesObj(recipes);
+    
+//---search an ingredient of the recipe then write this item into the table------
+    creatTagTable.appendChild(creatTagTr);
+    
+//---- I created  elements of Ingredients DropDown  
+    const dropdownDivIngredient = document.getElementById("myDropdown--ingredient");
+    dropdownDivIngredient.appendChild(recipesObj2.ingredientDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivAppareils = document.getElementById("myDropdown--appareils");
+    dropdownDivAppareils.appendChild(recipesObj2.appareilsDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivUstensiles = document.getElementById("myDropdown--ustensiles");
+    dropdownDivUstensiles.appendChild(recipesObj2.ustensilesDropDownDom);
+  }
+
+ 

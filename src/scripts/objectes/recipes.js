@@ -6,7 +6,7 @@ class recipesObj {
         this.selectedAppareilList = [];
         this.selectedUstensilsList = [];
 
-        for (const recipeCard of recipesArray) {
+        for (const recipeCard of recipesArray) {;
             this.recipesList.push(new recipeObj(recipeCard));
         }
     }
@@ -15,16 +15,18 @@ class recipesObj {
         ingredientDiv.setAttribute('id','contentIngredientDiv');
         var myIngredientsFiltered = [];
         var myIngredientsFilteredItem = [];
-        
+       
+       
         for (var i=0; i< this.recipesList.length; i++) {
             for(var k=0; k<this.recipesList[i].ingredients.length; k++){
                 let ingredients = this.recipesList[i].ingredients[k];
-                if (myIngredientsFilteredItem.indexOf(ingredients.ingredient) == -1) {
-                    myIngredientsFilteredItem.push(ingredients.ingredient);
+                if (myIngredientsFilteredItem.indexOf(ingredients.ingredient.toLowerCase()) == -1) {
+                    myIngredientsFilteredItem.push(ingredients.ingredient.toLowerCase());
                     myIngredientsFiltered.push(ingredients);
                 }
             }
         }
+        
         for (const ingredient of myIngredientsFiltered) {
             const ingredientTagA= document.createElement('a');
             ingredientTagA.setAttribute('href','#');
@@ -39,24 +41,29 @@ class recipesObj {
                 creatTagTr.appendChild(field);  
                 field.addEventListener('click',() =>{
                     field.style.display = 'none';
-                    this.selectedIngredientsList = this.selectedIngredientsList.filter(i=>i.ingredient != ingredientTagA.innerText);
-                    saveInput(this.selectedIngredientsList);
+                    this.selectedIngredientsList = this.selectedIngredientsList.filter(i=>i != ingredientTagA.innerText);
+                    saveInput(this.selectedIngredientsList, this.selectedAppareilList, this.selectedUstensilsList);
+                    var ingredientTagAa = document.createElement('a');
+                    ingredientTagAa.setAttribute('href','#');
+                    ingredientTagAa.innerText = ingredient.ingredient;
+                    ingredientDiv.appendChild(ingredientTagAa);
                 });
+                //remove item of the ingredients when you click
                 ingredientTagA.remove();
                 //close all dropdown menus when you click
+                hideAllDropDownMenus();
                 // hideAllDropDownMenusExceptMe("myDropdown--ingredient");
-                document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
+                // document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
                 // document.getElementsByClassName("dropdown-content--list").classList.toggle("show--ingredient");
-                dropDownAppareil.style.position='unset';
-                dropDownUstensile.style.position='unset';
+                // dropDownAppareil.style.position='unset';
+                // dropDownUstensile.style.position='unset';
                 inputIngredient.textContent =" ";
 
                 //Do new search
-                this.selectedIngredientsList.push(ingredient);
-                saveInput(this.selectedIngredientsList);
+                this.selectedIngredientsList.push(ingredient.ingredient);
+                saveInput(this.selectedIngredientsList,this.selectedAppareilList,this.selectedUstensilsList);
+                
             })
-        
-            // ingredient = ingredient.filter(k => k.ingredient !=ingredientTagA.innerText);
         }
         return ingredientDiv;
     }
@@ -68,8 +75,8 @@ class recipesObj {
         var myAppareilFilteredItem = [];
             for (var i=0; i< this.recipesList.length; i++) {
                 let appareil = this.recipesList[i].appliance;
-                if(myAppareilFilteredItem.indexOf(appareil)==-1){
-                    myAppareilFilteredItem.push(appareil);
+                if(myAppareilFilteredItem.indexOf(appareil.toLowerCase())==-1){
+                    myAppareilFilteredItem.push(appareil.toLowerCase());
                     myAppareilFiltered.push(appareil);
                 }
             }
@@ -82,6 +89,7 @@ class recipesObj {
 
                     var fieldAppareil = document.createElement('td');
                     fieldAppareil.setAttribute('class','searchedText--td');
+                    fieldAppareil.style.backgroundColor = "#68D9A4";
                     fieldAppareil.innerHTML = `
                         <p id="searchedText1">${appareilItem}</p><img id="closeButton1" 
                         src="src/image/cross-circle.png" alt="cross-circle icon"/>`;
@@ -89,17 +97,23 @@ class recipesObj {
                     fieldAppareil.addEventListener('click',() =>{
                         fieldAppareil.style.display = 'none';
                         this.selectedAppareilList = this.selectedAppareilList.filter(i=>i != appareilsTagA.innerText);
-                        saveInput(this.selectedIngredientsList,this.selectedAppareilList);
-                        console.log("appareil list: ",this.selectedAppareilList);
+                        saveInput(this.selectedIngredientsList,this.selectedAppareilList,this.selectedUstensilsList);
+                        var appareilsTagAa = document.createElement('a');
+                        appareilsTagAa.setAttribute('href','#');
+                        appareilsTagAa.innerText = appareilItem;
+                        appareilsDiv.appendChild(appareilsTagAa);
                     });
                     appareilsTagA.remove();
                     //close dropdown menu when you click
-                    document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
-                    dropDownUstensile.style.left='380px';
+                    hideAllDropDownMenus();
+                    // document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
+                    // dropDownUstensile.style.position='unset';
+                    // dropDownUstensile.style.left='380px';
                     inputAppareil.textContent = " ";
                     //Do new search
                     this.selectedAppareilList.push(appareilItem);
-                    saveInput(this.selectedIngredientsList,this.selectedAppareilList);
+                    saveInput(this.selectedIngredientsList,this.selectedAppareilList,this.selectedUstensilsList);
+                
                 })
             }
         return appareilsDiv;
@@ -114,8 +128,8 @@ class recipesObj {
         for (var i=0; i< this.recipesList.length; i++) {
             for(var k=0; k<this.recipesList[i].ustensils.length; k++){
                 let ustensiles = this.recipesList[i].ustensils[k];
-                if (myUstensilesFilteredItem.indexOf(ustensiles) == -1) {
-                    myUstensilesFilteredItem.push(ustensiles);
+                if (myUstensilesFilteredItem.indexOf(ustensiles.toLowerCase()) == -1) {
+                    myUstensilesFilteredItem.push(ustensiles.toLowerCase());
                     myUstensilesFiltered.push(ustensiles);
                 }
             }
@@ -126,20 +140,26 @@ class recipesObj {
             ustensilesTagA.innerText = ustensiles;
             ustensilesDiv.appendChild(ustensilesTagA);
             ustensilesTagA.addEventListener('click',() =>{
-                var field = document.createElement('td');
-                field.setAttribute('class','searchedText--td');
-                field.innerHTML = `
+                var fieldUstensiles = document.createElement('td');
+                fieldUstensiles.setAttribute('class','searchedText--td');
+                fieldUstensiles.style.backgroundColor = "#ED6454";
+                fieldUstensiles.innerHTML = `
                     <p id="searchedText1">${ustensiles}</p><img id="closeButton1" 
                     src="src/image/cross-circle.png" alt="cross-circle icon"/>`;
-                creatTagTr.appendChild(field);
-                field.addEventListener('click',() =>{
-                    field.style.display = 'none';
+                creatTagTr.appendChild(fieldUstensiles);
+                fieldUstensiles.addEventListener('click',() =>{
+                    fieldUstensiles.style.display = 'none';
                     this.selectedUstensilsList = this.selectedUstensilsList.filter(i=>i != ustensilesTagA.innerText);
                     saveInput(this.selectedIngredientsList,this.selectedAppareilList,this.selectedUstensilsList);
+                    var ustensilesTagAa = document.createElement('a');
+                    ustensilesTagAa.setAttribute('href','#');
+                    ustensilesTagAa.innerText = ustensiles;
+                    ustensilesDiv.appendChild(ustensilesTagAa);
                 });
                 ustensilesTagA.remove();
                 //close dropdown menu when you click
-                document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
+                hideAllDropDownMenus();
+                // document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
                 inputUstensile.textContent = " ";
                 //Do new search
                 this.selectedUstensilsList.push(ustensiles);
@@ -203,7 +223,7 @@ class recipeObj {
 }
 
 
-function hideAllDropDownMenusExceptMe(idName){
+function hideAllDropDownMenus(){
     //Hide all menu
     domMenuList = document.getElementsByClassName("dropdown-content--list");
 
@@ -212,10 +232,9 @@ function hideAllDropDownMenusExceptMe(idName){
         menu.classList.remove("show--appareils");
         menu.classList.remove("show--ustensiles");
     }
-
-    //Show this menu
-    // document.getElementById(idName).classList.add("show--ingredient");
-                
+    dropDownUstensile.style.position='unset';
+    // dropDownIngredient.style.position='unset';
+    dropDownAppareil.style.position='unset';
 }
 
 
