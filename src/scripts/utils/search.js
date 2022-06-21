@@ -14,12 +14,10 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     console.log("appareilText: ",appareilText);
     console.log("ustensileText: ",ustensileText);
     //Is there any searched value?
-    // filteredRecipes = filteredRecipes.length ? filteredRecipes : this.dataRecette.recipes;
     filteredRecipes = this.dataRecette.recipes;
     for (const iteratorIngredient of ingredientText) {
         console.log(iteratorIngredient);
-        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient)));     
-        
+        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient))); 
     };
 
     for (const iteratorAppareil of appareilText) {
@@ -38,7 +36,6 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     //Display new carts
     console.log("Total carts:",filteredRecipes);
     showRecipeContainer(filteredRecipes);
-    // displayIndex(filteredRecipes);
 }
 
 const processChanges = debounce(() => saveInput()); 
