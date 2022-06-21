@@ -25,36 +25,6 @@
 async function displayIndex(recipes) {
     showDropDownMenus(recipes);
     showRecipeContainer(recipes);
-    //first clean the inner carts
-    // recipeContainer.innerHTML = '';
-    // const recipesObj2 = new recipesObj(recipes);
-//     // console.log('recipe obj', recipesObj2);
-//     // CallTheDropDownMenus();
-//     creatTagTable.appendChild(creatTagTr);
-// //------search an ingredient of the recipe then write this item into the label------
-//     // creatTag();
-// //---- I created  elements of Ingredients DropDown  
-//     const dropdownDivIngredient = document.getElementById("myDropdown--ingredient");
-//     dropdownDivIngredient.appendChild(recipesObj2.ingredientDropDownDom);
-
-// //---- I created  elements of Appareils DropDown  
-//     const dropdownDivAppareils = document.getElementById("myDropdown--appareils");
-//     dropdownDivAppareils.appendChild(recipesObj2.appareilsDropDownDom);
-
-// //---- I created  elements of Appareils DropDown  
-//     const dropdownDivUstensiles = document.getElementById("myDropdown--ustensiles");
-//     dropdownDivUstensiles.appendChild(recipesObj2.ustensilesDropDownDom);
-    
-// //-----I created  the cardDOM of recipes -------
-//     for (const recipeCard of recipesObj2.recipesList) {
-//         recipeContainer.appendChild(recipeCard.recipeCardDom);
-//     }
-// //-----When there is no correspond search
-//     if(filteredRecipes.length == 0){
-//         var creatP = document.createElement("p");
-//         creatP.textContent = "Aucune recette ne correspond à votre critère… Vous pouvez chercher  ' tarte aux pommes ' , 'poisson' etc... ";
-//         recipeContainer.appendChild(creatP);
-//     }
 }
 
 function showRecipeContainer(recipesContainer){

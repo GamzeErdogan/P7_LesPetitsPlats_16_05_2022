@@ -52,13 +52,7 @@ class recipesObj {
                 ingredientTagA.remove();
                 //close all dropdown menus when you click
                 hideAllDropDownMenus();
-                // hideAllDropDownMenusExceptMe("myDropdown--ingredient");
-                // document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
-                // document.getElementsByClassName("dropdown-content--list").classList.toggle("show--ingredient");
-                // dropDownAppareil.style.position='unset';
-                // dropDownUstensile.style.position='unset';
                 inputIngredient.textContent =" ";
-
                 //Do new search
                 this.selectedIngredientsList.push(ingredient.ingredient);
                 saveInput(this.selectedIngredientsList,this.selectedAppareilList,this.selectedUstensilsList);
@@ -106,9 +100,6 @@ class recipesObj {
                     appareilsTagA.remove();
                     //close dropdown menu when you click
                     hideAllDropDownMenus();
-                    // document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
-                    // dropDownUstensile.style.position='unset';
-                    // dropDownUstensile.style.left='380px';
                     inputAppareil.textContent = " ";
                     //Do new search
                     this.selectedAppareilList.push(appareilItem);
@@ -159,7 +150,6 @@ class recipesObj {
                 ustensilesTagA.remove();
                 //close dropdown menu when you click
                 hideAllDropDownMenus();
-                // document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
                 inputUstensile.textContent = " ";
                 //Do new search
                 this.selectedUstensilsList.push(ustensiles);
@@ -232,9 +222,8 @@ function hideAllDropDownMenus(){
         menu.classList.remove("show--appareils");
         menu.classList.remove("show--ustensiles");
     }
-    dropDownUstensile.style.position='unset';
-    // dropDownIngredient.style.position='unset';
-    dropDownAppareil.style.position='unset';
+    dropDownAppareil.style.left = "190px";
+    dropDownUstensile.style.left = "360px";
 }
 
 
