@@ -5,10 +5,21 @@ main{
     margin: 37px;
     gap: 40px;
     flex-wrap: wrap;
+    @include mobile-only{
+        width: 100%;
+        margin: 37px 0 0 0;
+    }
     .cardDiv{
         border-radius: 5px;
         width: 31%;
-        height: 400px;
+        @include tablette-only{
+            width: 45%;
+        }
+        @include mobile-only{
+            width: 80%;
+            align-items:center;
+        }
+        height: 430px;
         background-color: $searchAreaColor;
         .emptyArea{
             border-radius: 5px 5px 0 0;
@@ -19,9 +30,13 @@ main{
         .titleArea{
             @include flexBox;
             justify-content: space-between;
+            font-size: larger;
             font-weight: 600;
             margin-left: 10px;
             margin-right: 10px;
+            @include mobile-only{
+                font-weight: 700;
+            }
             .iconArea{
                 @include flexBox;
                 justify-content: space-between;
@@ -38,6 +53,7 @@ main{
             font-size: 12px;
             align-items: flex-start;
             margin: 5px;
+            
             .ingredientDiv{
                 width: 50%;
                 height: 127px;
@@ -57,6 +73,9 @@ main{
                     font-family: Roboto;
                     font-size: 14px;
                     font-weight: 400;
+                    // @include mobile-only{
+                    //     font-size: 15px;
+                    // }
 
                 }
             }

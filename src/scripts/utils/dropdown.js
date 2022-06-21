@@ -1,16 +1,20 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-const dropDownAppareil = document.querySelector(".dropbtn--appareils");
-const dropDownUstensile = document.querySelector(".dropbtn--ustensiles");
+//VARIABLES
+const dropDownAppareil = document.querySelector(".dropdown--appareils");
+const dropDownUstensile = document.querySelector(".dropdown--ustensiles");
 var inputIngredient = document.getElementById("myInput--ingredient");
 var inputAppareil = document.getElementById("myInput--appareils");
 var inputUstensile = document.getElementById("myInput--ustensiles");
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
 function myFunctionIngredient() {
     document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
     dropDownAppareil.style.position='absolute';
-    dropDownAppareil.style.left='430px';
+    dropDownAppareil.style.left='630px';
     dropDownUstensile.style.position='absolute';
-    dropDownUstensile.style.left='550px';
+    dropDownUstensile.style.left='800px';
+    document.getElementById("myDropdown--appareils").classList.remove("show--appareils");
+    document.getElementById("myDropdown--ustensiles").classList.remove("show--ustensiles");
   }
   
   function filterFunctionIngredient() {
@@ -30,9 +34,10 @@ function myFunctionIngredient() {
   
   function myFunctionAppareils (){
     document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
-    const dropDownUstensile = document.querySelector(".dropbtn--ustensiles");
-    dropDownUstensile.style.position='absolute';
+    document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
+    document.getElementById("myDropdown--ustensiles").classList.remove("show--ustensiles");
     dropDownUstensile.style.left='150px';
+    // dropDownAppareil.style.left='200px';
   }
 
   function filterFunctionAppareils() {
@@ -52,6 +57,10 @@ function myFunctionIngredient() {
 
   function myFunctionUstensiles (){
     document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
+    document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
+    document.getElementById("myDropdown--appareils").classList.remove("show--appareils");
+    // dropDownUstensile.style.left='380px';
+    // dropDownAppareil.style.left='200px';
   }
 
   function filterFunctionUstensiles() {
@@ -68,3 +77,23 @@ function myFunctionIngredient() {
       }
     }
   }
+  function showDropDownMenus(recipes){
+    const recipesObj2 = new recipesObj(recipes);
+    
+//---search an ingredient of the recipe then write this item into the table------
+    creatTagTable.appendChild(creatTagTr);
+    
+//---- I created  elements of Ingredients DropDown  
+    const dropdownDivIngredient = document.getElementById("myDropdown--ingredient");
+    dropdownDivIngredient.appendChild(recipesObj2.ingredientDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivAppareils = document.getElementById("myDropdown--appareils");
+    dropdownDivAppareils.appendChild(recipesObj2.appareilsDropDownDom);
+
+//---- I created  elements of Appareils DropDown  
+    const dropdownDivUstensiles = document.getElementById("myDropdown--ustensiles");
+    dropdownDivUstensiles.appendChild(recipesObj2.ustensilesDropDownDom);
+  }
+
+ 
