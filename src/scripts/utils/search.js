@@ -17,7 +17,7 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     filteredRecipes = this.dataRecette.recipes;
     
     for (const iteratorIngredient of ingredientText) {
-        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient.ingredient)));     
+        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient)));     
     }
 
     for (const iteratorAppareil of appareilText) {
