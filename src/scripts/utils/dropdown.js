@@ -9,12 +9,10 @@ var inputUstensile = document.getElementById("myInput--ustensiles");
 toggle between hiding and showing the dropdown content */
 function myFunctionIngredient() {
     document.getElementById("myDropdown--ingredient").classList.toggle("show--ingredient");
-    dropDownAppareil.style.position='absolute';
-    dropDownAppareil.style.left='630px';
-    dropDownUstensile.style.position='absolute';
-    dropDownUstensile.style.left='800px';
     document.getElementById("myDropdown--appareils").classList.remove("show--appareils");
     document.getElementById("myDropdown--ustensiles").classList.remove("show--ustensiles");
+    dropDownAppareil.classList.toggle('dropdown--appareilsMoveRight');
+    dropDownUstensile.classList.toggle('dropdown--ustensilesMoveRightForIngredient');
   }
   
   function filterFunctionIngredient() {
@@ -36,7 +34,8 @@ function myFunctionIngredient() {
     document.getElementById("myDropdown--appareils").classList.toggle("show--appareils");
     document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
     document.getElementById("myDropdown--ustensiles").classList.remove("show--ustensiles");
-    dropDownUstensile.style.left='530px';
+    dropDownUstensile.classList.toggle('dropdown--ustensilesMoveRightForApparail');
+    dropDownAppareil.classList.remove('dropdown--appareilsMoveRight');
   }
 
   function filterFunctionAppareils() {
@@ -58,6 +57,9 @@ function myFunctionIngredient() {
     document.getElementById("myDropdown--ustensiles").classList.toggle("show--ustensiles");
     document.getElementById("myDropdown--ingredient").classList.remove("show--ingredient");
     document.getElementById("myDropdown--appareils").classList.remove("show--appareils");
+    dropDownAppareil.classList.remove('dropdown--appareilsMoveRight');
+    dropDownUstensile.classList.remove('dropdown--ustensilesMoveRightForApparail');
+    dropDownUstensile.classList.remove('dropdown--ustensilesMoveRightForIngredient');
   }
 
   function filterFunctionUstensiles() {

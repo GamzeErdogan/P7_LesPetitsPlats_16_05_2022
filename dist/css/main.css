@@ -365,6 +365,11 @@ nav .dropdown--appareils .show--appareils {
   width: 300px;
 }
 
+nav .dropdown--appareilsMoveRight {
+  position: absolute;
+  left: 630px;
+}
+
 nav .dropdown--ustensiles {
   position: relative;
   display: inline-block;
@@ -453,6 +458,16 @@ nav .dropdown--ustensiles #contentUstensilesDiv a:hover {
 nav .dropdown--ustensiles .show--ustensiles {
   display: block;
   width: 300px;
+}
+
+nav .dropdown--ustensilesMoveRightForIngredient {
+  position: absolute;
+  left: 800px;
+}
+
+nav .dropdown--ustensilesMoveRightForApparail {
+  position: absolute;
+  left: 550px;
 }
 
 main {

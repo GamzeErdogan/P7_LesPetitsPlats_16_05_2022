@@ -25,6 +25,12 @@
 async function displayIndex(recipes) {
     showDropDownMenus(recipes);
     showRecipeContainer(recipes);
+    document.getElementById('tableTag').addEventListener('click',() =>{
+        hideAllDropDownMenus();
+    })
+    document.getElementsByTagName('header')[0].addEventListener('click',() =>{
+        hideAllDropDownMenus();
+    })
 }
 
 function showRecipeContainer(recipesContainer){
