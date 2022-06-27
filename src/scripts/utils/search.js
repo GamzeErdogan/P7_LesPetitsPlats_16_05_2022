@@ -15,10 +15,10 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     console.log("ustensileText: ",ustensileText);
     //Is there any searched value?
     filteredRecipes = this.dataRecette.recipes;
+    
     for (const iteratorIngredient of ingredientText) {
-        console.log(iteratorIngredient);
-        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient))); 
-    };
+        filteredRecipes = filteredRecipes.filter(i => i.ingredients.some(k => k.ingredient.includes(iteratorIngredient.ingredient)));     
+    }
 
     for (const iteratorAppareil of appareilText) {
         filteredRecipes = filteredRecipes.filter(t => t.appliance.includes(iteratorAppareil));
@@ -27,12 +27,25 @@ function saveInput(ingredientText =[], appareilText = [], ustensileText = []){
     for (const iteratorUstensiles of ustensileText) {
         filteredRecipes = filteredRecipes.filter(p => p.ustensils.includes(iteratorUstensiles));
     }
-   
+    var newIngredient=[];
     //Re-search after input text entered more than 3 character 
     if(searchValue.value.length > 2 ){
         //Create new recipes array by entering word
-        filteredRecipes = filteredRecipes.filter(i => i.name.includes(searchValue.value) || i.description.includes(searchValue.value) || i.ingredients.some(k => k.ingredient.includes(searchValue.value)));
+        for(i=0; i<filteredRecipes.length; i++){
+            if(filteredRecipes[i].name.includes(searchValue.value) || filteredRecipes[i].description.includes(searchValue.value)){
+                newIngredient.push(filteredRecipes[i]);
+                console.log(filteredRecipes[i]);
+                continue;
+            }
+            for(k=0; k<filteredRecipes[i].ingredients.length; k++){
+                if(filteredRecipes[i].ingredients[k].ingredient.includes(searchValue.value)){
+                    newIngredient.push(filteredRecipes[i]);
+                }
+            }
+        }
+        filteredRecipes = newIngredient;
     }
+    
     //Display new carts
     console.log("Total carts:",filteredRecipes);
     showRecipeContainer(filteredRecipes);
