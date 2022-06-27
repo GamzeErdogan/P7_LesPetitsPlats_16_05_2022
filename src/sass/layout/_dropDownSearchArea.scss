@@ -152,7 +152,10 @@ nav{
         width: 300px;
       }
 }
-
+.dropdown--appareilsMoveRight{
+  position: absolute;
+  left: 630px;
+}
  /* Dropdown Button3*/
 .dropdown--ustensiles {
   position: relative;
@@ -200,5 +203,13 @@ nav{
         display:block;
         width: 300px;
       }
+}
+.dropdown--ustensilesMoveRightForIngredient{
+  position: absolute;
+  left: 800px;
+}
+.dropdown--ustensilesMoveRightForApparail{
+  position: absolute;
+  left: 550px;
 }
 }

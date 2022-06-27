@@ -222,8 +222,9 @@ function hideAllDropDownMenus(){
         menu.classList.remove("show--appareils");
         menu.classList.remove("show--ustensiles");
     }
-    dropDownAppareil.style.left = "190px";
-    dropDownUstensile.style.left = "360px";
+    dropDownAppareil.classList.remove('dropdown--appareilsMoveRight');
+    dropDownUstensile.classList.remove('dropdown--ustensilesMoveRightForIngredient');
+    dropDownUstensile.classList.remove('dropdown--ustensilesMoveRightForApparail');
 }
 
 
